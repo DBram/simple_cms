@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cusip: MyText
+  tracking_id: 1
+  description: MyText
+  symbol: MyText
+  traded: false
+
+two:
+  cusip: MyText
+  tracking_id: 1
+  description: MyText
+  symbol: MyText
+  traded: false

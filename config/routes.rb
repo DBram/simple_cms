@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
+  root 'demo#index'
+  
+get 'demo/index'
+get 'test_controller/index'
+get 'demo/hello'
+get 'demo/other_hello'
+get 'demo/lynda'
+  
+  # default route
+  # get ':controller(/:action(/:id))'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

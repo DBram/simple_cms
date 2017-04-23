@@ -1,0 +1,20 @@
+<h2>Hello, is it me you're looking for?</h2>
+<a href="/demo/index"> To Index Page</a>
+<%= 1 + 1 %>
+<br />
+<% target = "world" %> 
+<%= "Hello #{target}" %>
+
+<br />
+
+ 
+<% @array.each do |n| %>
+   <%= n %> <br/>
+<% end %>
+
+<br />
+
+ID: <%= @id %><br/>
+ID: <%= params[:id] %><br/>
+Page: <%= @page %><br/>
+Next page: <%= @page.to_i + 1 %> 
