@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  root 'demo#index'
+  get 'pages/show'
+
+  get 'home/show'
+  resources :pages, only: [:show]
+
+  root 'home#show'
   
+
 get 'demo/index'
 get 'test_controller/index'
 get 'demo/hello'

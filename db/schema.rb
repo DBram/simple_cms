@@ -11,27 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419195249) do
+ActiveRecord::Schema.define(version: 20170502153621) do
 
-  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
-    t.string   "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "blocks", force: :cascade do |t|
+    t.string   "title",        limit: 255
+    t.text     "body",         limit: 65535
+    t.string   "position",     limit: 255
+    t.string   "display",      limit: 255
+    t.boolean  "show_title"
+    t.string   "class_suffix", limit: 255
+    t.boolean  "is_published"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  add_index "ar_internal_metadata", ["key"], name: "sqlite_autoindex_ar_internal_metadata_1", unique: true
-
-  create_table "assets", force: :cascade do |t|
-    t.text     "cusip"
-    t.integer  "tracking_id"
-    t.text     "description"
-    t.text     "symbol"
-    t.boolean  "traded"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "pages", force: :cascade do |t|
+    t.string   "title",        limit: 255
+    t.integer  "section_id",   limit: 4
+    t.text     "body",         limit: 65535
+    t.integer  "order",        limit: 4
+    t.boolean  "is_published"
+    t.boolean  "menu_display"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  add_index "assets", ["symbol"], name: "index_assets_on_symbol", unique: true
-  add_index "assets", ["tracking_id"], name: "index_assets_on_tracking_id", unique: true
+  create_table "sections", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
 end
